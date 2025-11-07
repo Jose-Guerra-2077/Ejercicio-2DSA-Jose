@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@font-face {
+    font-family: BlenderProBook;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/build/fonts/BlenderPro-Book-a6763c9a.woff2) format("woff2"),url(/build/fonts/BlenderPro-Book-a7182e33.woff) format("woff")
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #29FFFF;
+    font-family: "Aldrich", "JetBrains Mono", sans-serif;
+    background: #0C1013;
+    display: flex;
+    height: 100dvh;
+    width: 100dvw;
+    font-size: 1.35rem;
+    scrollbar-color: var(--principal-color) var(--font-color);
+    svg {
+        fill: rgb(255, 255, 255);
+    }
+}
+
+h1, p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-gallery{
+    columns: 2;
+    padding: 16px 32px;
+    column-gap: 32px;
+}
+
+.image-gallery img {
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+@keyframes reveal{
+    from{
+        opacity: 0;
+        translate: 0 100px;
+        scale: .5;
+    }
+    to{
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+}
